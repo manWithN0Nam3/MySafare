@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     NSString *string = @"hello";
+    NSString *secondString = @"elllooooo";
 }
 
 - (void)didReceiveMemoryWarning {
