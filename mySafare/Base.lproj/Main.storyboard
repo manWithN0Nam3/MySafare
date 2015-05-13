@@ -183,6 +183,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="lzJ-54-xUZ" id="neN-T0-nQv"/>
+                        <outlet property="forwardButton" destination="aaL-JV-X6B" id="KRQ-Jf-Hr5"/>
                         <outlet property="spinner" destination="c4u-ho-tHR" id="SaZ-w6-Tuj"/>
                         <outlet property="urlTextField" destination="l2y-zr-Huo" id="EkD-x7-kdG"/>
                         <outlet property="webView" destination="354-k5-4tq" id="MHQ-cf-mhf"/>

@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 
 @end
 
@@ -22,11 +24,8 @@
 
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView {
 
-    [self.spinner stopAnimating];
 
-}
 
 - (IBAction)onBackButtonPressed:(id)sender {
 
@@ -50,6 +49,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.webView.delegate = self;
     self.urlTextField.delegate = self;
+
+    [self.backButton setEnabled:YES];
+    [self.backButton setEnabled:NO];
+
+    [self.forwardButton setEnabled:YES];
+    [self.forwardButton setEnabled:NO];
+    
+
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+
+
+    [self.spinner stopAnimating];
+
+
+    //button is enabled only if you can go forward [or] backward
+    [self.backButton setEnabled:[webView canGoBack]];
+
+    [self.forwardButton setEnabled:[webView canGoForward]];
 
 }
 
