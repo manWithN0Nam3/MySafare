@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleURL;
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 
 @end
@@ -83,6 +84,9 @@
     [self.backButton setEnabled:[webView canGoBack]];
 
     [self.forwardButton setEnabled:[webView canGoForward]];
+
+    self.titleURL.text =[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+
 
 }
 
