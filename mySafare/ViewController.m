@@ -11,10 +11,28 @@
 @interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
 @implementation ViewController
+
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.spinner startAnimating];
+
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+
+    [self.spinner stopAnimating];
+
+}
+
+- (IBAction)onBackButtonPressed:(id)sender {
+
+    [self.webView goBack];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +54,10 @@
 
     NSString *stringUrl = textField.text;
     NSURL *url = [NSURL URLWithString:stringUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
 
-    return nil;
+    return YES;
 
 
 }
