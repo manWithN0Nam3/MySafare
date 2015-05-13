@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 
 @end
 
@@ -17,16 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-    NSString *string = @"hello";
-    NSString *secondString = @"elllooooo";
-    NSString *alright = @"alright";
+    self.webView.delegate = self;
+    self.urlTextField.delegate = self;
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+
+
+
+    NSString *stringUrl = textField.text;
+    NSURL *url = [NSURL URLWithString:stringUrl];
+
+    return nil;
+
+
 }
 
 @end
