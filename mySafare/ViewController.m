@@ -55,7 +55,7 @@
 
     [self.forwardButton setEnabled:YES];
     [self.forwardButton setEnabled:NO];
-    
+
 
 }
 
@@ -80,14 +80,41 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 
+    if ([textField.text containsString:@"http://"]||[textField.text containsString:@"https://"]) {
+
+        NSString *urlString = textField.text;
+
+        NSURL *url = [NSURL URLWithString:urlString];
+
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+
+        [self.webView loadRequest:urlRequest];
+
+    }
+    else{
+
+        NSString *urlString = [NSString stringWithFormat:@"http://%@",textField.text];
 
 
-    NSString *stringUrl = textField.text;
-    NSURL *url = [NSURL URLWithString:stringUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
+        NSURL *url = [NSURL URLWithString:urlString];
 
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+
+        [self.webView loadRequest:urlRequest];
+
+
+        
+        
+    }
     return YES;
+//
+//
+//    NSString *stringUrl = textField.text;
+//    NSURL *url = [NSURL URLWithString:stringUrl];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [self.webView loadRequest:request];
+//
+//    return YES;
 
 
 }
