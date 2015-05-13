@@ -74,6 +74,8 @@
     [self.forwardButton setEnabled:YES];
     [self.forwardButton setEnabled:NO];
 
+    self.urlTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+
 
 }
 
