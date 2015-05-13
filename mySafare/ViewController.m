@@ -20,6 +20,8 @@
 
     NSString *string = @"hello";
     NSString *secondString = @"elllooooo";
+    NSString *alright = @"alright";
+
 }
 
 - (void)didReceiveMemoryWarning {
