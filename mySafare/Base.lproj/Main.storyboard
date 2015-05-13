@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -60,19 +61,59 @@
                                             <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zfP-Vu-3ex"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-JV-X6B">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="74" y="6" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onForwardButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pc5-rO-pOk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l30-SH-ABQ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Reload">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="135" y="6" width="49" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onReloadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9bw-3W-XOB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="lzJ-54-xUZ"/>
+                                        <exclude reference="aaL-JV-X6B"/>
+                                        <exclude reference="l30-SH-ABQ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="lzJ-54-xUZ"/>
+                                        <include reference="aaL-JV-X6B"/>
+                                        <include reference="l30-SH-ABQ"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0P-QP-S3B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="x">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="266" y="20" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onStopLoadingButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="be4-tL-WkK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -98,21 +139,22 @@
                                 <exclude reference="l2y-zr-Huo"/>
                                 <exclude reference="c4u-ho-tHR"/>
                                 <exclude reference="rFQ-BM-wvv"/>
+                                <exclude reference="h0P-QP-S3B"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9Dm-Ha-Mfz"/>
-                                <exclude reference="DHf-g7-gsZ"/>
-                                <exclude reference="iv0-SA-E3e"/>
+                                <exclude reference="4Bm-Uu-l39"/>
+                                <exclude reference="Uzx-yz-iZN"/>
                                 <exclude reference="N2g-HU-zmk"/>
                                 <exclude reference="NJE-yb-Nz8"/>
                                 <exclude reference="qGY-d3-B7m"/>
                                 <exclude reference="KfP-Bw-sSl"/>
                                 <exclude reference="uYn-hR-a15"/>
+                                <exclude reference="9Dm-Ha-Mfz"/>
+                                <exclude reference="DHf-g7-gsZ"/>
+                                <exclude reference="iv0-SA-E3e"/>
                                 <exclude reference="7xD-1W-0ys"/>
                                 <exclude reference="IdE-Th-5Ql"/>
                                 <exclude reference="M9g-hX-iyJ"/>
-                                <exclude reference="4Bm-Uu-l39"/>
-                                <exclude reference="Uzx-yz-iZN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,21 +163,22 @@
                                 <include reference="l2y-zr-Huo"/>
                                 <include reference="c4u-ho-tHR"/>
                                 <include reference="rFQ-BM-wvv"/>
+                                <include reference="h0P-QP-S3B"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9Dm-Ha-Mfz"/>
-                                <include reference="DHf-g7-gsZ"/>
-                                <include reference="iv0-SA-E3e"/>
+                                <include reference="4Bm-Uu-l39"/>
+                                <include reference="Uzx-yz-iZN"/>
                                 <include reference="N2g-HU-zmk"/>
                                 <include reference="NJE-yb-Nz8"/>
                                 <include reference="qGY-d3-B7m"/>
                                 <include reference="KfP-Bw-sSl"/>
                                 <include reference="uYn-hR-a15"/>
+                                <include reference="9Dm-Ha-Mfz"/>
+                                <include reference="DHf-g7-gsZ"/>
+                                <include reference="iv0-SA-E3e"/>
                                 <include reference="7xD-1W-0ys"/>
                                 <include reference="IdE-Th-5Ql"/>
                                 <include reference="M9g-hX-iyJ"/>
-                                <include reference="4Bm-Uu-l39"/>
-                                <include reference="Uzx-yz-iZN"/>
                             </mask>
                         </variation>
                     </view>
