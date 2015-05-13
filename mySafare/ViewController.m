@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate>
+@interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
@@ -24,6 +24,21 @@
 
 }
 
+- (IBAction)onAddButtonTapped:(id)sender {
+
+    UIAlertView *alert = [UIAlertView new];
+    alert.title = @"Coming Soon";
+    [alert addButtonWithTitle:@"Dismiss"];
+    alert.delegate = self;
+    [alert show];
+
+
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    [alertView dismissWithClickedButtonIndex:0 animated:TRUE];
+}
 
 
 
@@ -118,5 +133,6 @@
 
 
 }
+
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C2507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -85,6 +85,18 @@
                                             <action selector="onReloadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9bw-3W-XOB"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAJ-Hn-uau">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="211" y="6" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onAddButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bo0-DT-zch"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
@@ -92,6 +104,7 @@
                                         <exclude reference="lzJ-54-xUZ"/>
                                         <exclude reference="aaL-JV-X6B"/>
                                         <exclude reference="l30-SH-ABQ"/>
+                                        <exclude reference="MAJ-Hn-uau"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -99,6 +112,7 @@
                                         <include reference="lzJ-54-xUZ"/>
                                         <include reference="aaL-JV-X6B"/>
                                         <include reference="l30-SH-ABQ"/>
+                                        <include reference="MAJ-Hn-uau"/>
                                     </mask>
                                 </variation>
                             </view>
