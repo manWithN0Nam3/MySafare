@@ -76,8 +76,7 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
 
-
-    [self.spinner stopAnimating];
+            [self.spinner stopAnimating];
 
 
     //button is enabled only if you can go forward [or] backward
