@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleURL;
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 
+@property NSURL *url1;
+
 @end
 
 @implementation ViewController
@@ -84,8 +86,7 @@
     [self.backButton setEnabled:[webView canGoBack]];
 
     [self.forwardButton setEnabled:[webView canGoForward]];
-
-    self.titleURL.text =[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+ self.titleURL.text =[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 
 
 }
@@ -102,11 +103,13 @@
 
         NSString *urlString = textField.text;
 
-        NSURL *url = [NSURL URLWithString:urlString];
+        self.url1= [NSURL URLWithString:urlString];
 
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url1];
 
         [self.webView loadRequest:urlRequest];
+
+
 
     }
     else{
@@ -114,16 +117,17 @@
         NSString *urlString = [NSString stringWithFormat:@"http://%@",textField.text];
 
 
-        NSURL *url = [NSURL URLWithString:urlString];
+       self.url1 = [NSURL URLWithString:urlString];
 
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.url1];
 
         [self.webView loadRequest:urlRequest];
 
-
-        
-        
     }
+
+
+
+
     return YES;
 //
 //
