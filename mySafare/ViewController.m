@@ -90,7 +90,12 @@
 
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 
-    [self.urlTextField setHidden:NO];
+    NSString *y1 = [self.webView stringByEvaluatingJavaScriptFromString:@"scrollY"];
+
+
+    if ([y1 isEqualToString:@"0"]) {
+        [self.urlTextField setHidden:NO];
+    }
 
 }
 
