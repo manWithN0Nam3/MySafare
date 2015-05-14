@@ -90,6 +90,9 @@
     [self.forwardButton setEnabled:[webView canGoForward]];
  self.titleURL.text =[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 
+
+                             //uiwebviewOutel . request ptopert identifies the location of the content. URL property gets request properties url. absoluteStringproperty makes that url a string
+                                //that puts all of that into the textfield
     self.urlTextField.text = webView.request.URL.absoluteString;
 
 
