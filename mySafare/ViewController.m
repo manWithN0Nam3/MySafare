@@ -81,6 +81,12 @@
 
 }
 
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+
+    [self.urlTextField setHidden:YES];
+
+   
+}
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
