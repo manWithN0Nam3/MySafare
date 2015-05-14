@@ -90,6 +90,9 @@
     [self.forwardButton setEnabled:[webView canGoForward]];
  self.titleURL.text =[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 
+    self.urlTextField.text = webView.request.URL.absoluteString;
+
+
 
 }
 
@@ -113,6 +116,7 @@
 
 
 
+
     }
     else{
 
@@ -128,7 +132,7 @@
     }
 
 
-
+    [self.urlTextField resignFirstResponder];
 
     return YES;
 //
