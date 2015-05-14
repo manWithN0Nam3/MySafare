@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
+@interface ViewController ()<UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
@@ -33,6 +33,7 @@
     alert.title = @"Coming Soon";
     [alert addButtonWithTitle:@"Dismiss"];
     alert.delegate = self;
+
     [alert show];
 
 
@@ -67,6 +68,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.webView.delegate = self;
     self.urlTextField.delegate = self;
+    self.webView.scrollView.delegate = self;
 
     [self.backButton setEnabled:YES];
     [self.backButton setEnabled:NO];
@@ -79,6 +81,15 @@
 
 }
 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+//    if (scrollView.contentOffset.y <= 0.0) {
+//        [self.urlTextField isEnabled];
+//    }
+
+
+}
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
 
             [self.spinner stopAnimating];
@@ -98,6 +109,7 @@
 
 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
