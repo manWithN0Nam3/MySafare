@@ -85,14 +85,24 @@
 
     [self.urlTextField setHidden:YES];
 
-   
 }
+
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+
+    [self.urlTextField setHidden:NO];
+
+}
+
+
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
 //    if (scrollView.contentOffset.y <= 0.0) {
 //        [self.urlTextField isEnabled];
 //    }
+
 
 
 }
